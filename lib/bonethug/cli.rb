@@ -173,7 +173,7 @@ module Bonethug
         end
 
         # get the conf path
-        conf_path = vh_cnf.get('conf_path') || '/etc/apache2/sites-available'
+        conf_path = vh_cnf.get('conf_path') || '/etc/apache2/httpd.conf'
 
         # load the appropriate config for the web server
         vh = Configurator.vhost vh_cnf, exec_path, deploy.get('project_type'), env
