@@ -203,6 +203,7 @@ module Bonethug
 
         # write the to the hosts file
         # this needs work
+        system "echo #{vhost}"
         system "sudo sed -i '/## BONETHUG-#{vhost} ##/,/## END_BONETHUG-#{vhost} ##/ s/.*//g' #{path}"
         escaped = (hosts).gsub(/"/, '\"')
         system "sudo echo \"#{escaped}\" >> #{path}"
